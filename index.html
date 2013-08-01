@@ -1,0 +1,252 @@
+<html>
+<head>
+		<title></title>
+		<style type="text/css">
+
+		body, html{
+			height: 100%;
+			width: 100%;
+			position: relative;
+			margin:0;
+			  -webkit-transition: background 0.5s ease-in-out;  /* Chrome 1-25, Safari 3.2+ */
+	 -moz-transition: background 0.5s ease-in-out;  /* Firefox 4-15 */
+	   -o-transition: background 0.5s ease-in-out;  /* Opera 10.50–12.00 */
+		  transition: background 0.5s ease-in-out;  /* Chrome 26, Firefox 16+, IE 10+, Opera 12.10+ */
+		  text-rendering: optimizeLegibility;
+		  -webkit-font-smoothing: antialiased;
+		  background: #111;
+		  font-family:  Helvetica, Arial, 'Lucida Grande', sans-serif;
+
+		}
+		canvas {
+		display: block;
+		width: 100%;
+		min-height: 500px;
+		height: 100%;
+
+		position: fixed;
+		z-index: 5;
+		background: none;
+		
+	}
+	h1{
+		font-size: 3.1em;
+		line-height: 1.0em;
+	
+
+	}
+	h1.title{
+		-webkit-margin-before: 0em;
+		-webkit-margin-after: 0.37em;
+		-webkit-margin-start: 0px;
+		-webkit-margin-end: 0px;
+		margin-top: 0;
+		padding-left: 135px;
+
+	}
+	audio{display: none;}
+	.external{
+		position: absolute;
+		background: white;
+		padding: 1em;
+		z-index: 11;
+	}
+	.avatar{
+		position: relative;
+		float: left;
+		z-index: 1;
+	}
+	.wide{
+		top:0;
+		left:0;
+		display: none;
+
+	}
+	.lenotta{
+		right:0;
+		top: 0;
+		display: none;
+
+	}
+	.hack{
+		left:0;
+		bottom: 0;
+		display: none;
+	}
+	.lights{
+		right:0;
+		bottom: 0;
+	}
+	.central{
+		position: absolute;
+		top: 420px;
+		margin: auto;
+		width: 570px;
+		margin-left: -285px;
+		left: 50%;
+		z-index: 11;
+		color:#000;
+		text-align: justify;
+	}
+	.central2{
+		
+		-webkit-transform-origin: 50% 100%;
+		-moz-transform-origin: 50% 100%;
+		-ms-transform-origin: 50% 100%;
+		-o-transform-origin: 50% 100%;
+		transform-origin: 50% 100%;
+		-webkit-transform: skew(0deg,0deg) scaleY(.2);
+		-moz-transform: skew(0deg,0deg) scaleY(.2);
+		-ms-transform: skew(0deg,0deg) scaleY(.2);
+		-o-transform: skew(0deg,0deg) scaleY(.2);
+		color: transparent;
+		text-shadow: 0px 0px 40px #222;
+		display: none;
+		top:480px;
+	}
+	h1.subtitle{
+		font-size: 1.2em;
+
+	}
+	h1:after{
+		 content: "";
+  display: inline-block;
+  width: 100%;
+	}
+	.dustFrame{
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		overflow: hidden;
+	}
+	.dust{
+		position: absolute;
+		opacity: 0;
+		width: 100%;
+		height: 300%;
+		margin: 0;
+		z-index: 6;
+		   -webkit-transform: translate3d(0, 0, 0);
+
+	}
+	.dustCloserAnimated{
+		-webkit-animation: dustcloser 120s linear infinite;
+ 		-moz-animation:    dustcloser 120s linear infinite;
+	}
+	}
+	.dustCloser{
+		
+		z-index: 7;
+		background: url('dustbig.png');
+	}
+	.dustFarAnimated{
+		-webkit-animation: dustfar 150s linear infinite;
+ 		-moz-animation:    dustfar 150s linear infinite;
+	}
+	.dustFar{
+		z-index: 6;
+		background: url('dustsmall.png');
+		
+	}
+
+	@-webkit-keyframes dustcloser {
+	  0%    {  -webkit-transform: translateY(0); }
+ 	 100%  { -webkit-transform: translateY(-100%); }
+	}
+	@moz-keyframes dustcloser {
+	  0%    { -webkit-transform: translateY(0); }
+	  100%  { -webkit-transform: translateY(-100%);}
+	}
+
+
+	@-webkit-keyframes dustfar {
+	 0%    { -webkit-transform: translateY(0); }
+	  100%  { -webkit-transform: translateY(-100%);}
+	}
+	@moz-keyframes dustfar {
+	  0%    { -webkit-transform: translateY(0); }
+	  100%  { -webkit-transform: translateY(-100%);}
+	}
+	@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+	@font-face {
+	font-family: 'code_boldregular';
+	src: url('fonts/code_bold-webfont.eot');
+	src: url('fonts/code_bold-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('fonts/code_bold-webfont.woff') format('woff'),
+		 url('fonts/code_bold-webfont.ttf') format('truetype'),
+		 url('fonts/code_bold-webfont.svg#code_boldregular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+
+}
+	</style>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+</head>
+<body>
+	<div class = 'external wide'>Wide</div>
+	<div class = 'external lenotta'>Lenotta</div>
+	<div class = 'external hack'>Hack</div>
+	<div class = 'external lights'>Toggle Lights!</div>
+	<div class = 'central mainText'>
+		<img class='avatar' src="avatar.png" height='100' width='100'>
+		<h1 class = 'title'>Hullo! My name is Edoardo Odorico.</h1>
+		<h1 class = 'subtitle'>I'm a web designer, photographer and videomaker.</h1>
+		<h1 class = 'subtitle'>Watch my blogs on the left, or my works on the top right!</h1>
+
+	</div>
+
+	<div class='dustFrame'>
+		<div class = "dustCloser dust"></div>
+		<div class = "dustFar dust"></div>
+	</div>
+	<canvas id="Light"></canvas>
+	<canvas id="RopeDrawingArea">You need a internet browser that support html5 canvas…</canvas>
+	<script type="text/javascript" src="js/physic.js"></script>
+	<script type="text/javascript" src="js/ropeCore.js"></script>
+	<script type="text/javascript" src="js/ropeImpl.js"></script>
+	<script type="text/javascript" src="js/verletDemoBootStrapper.js"></script>
+	<script type="text/javascript">$
+	var titleShadow = $('.central2');
+	var central = $('.mainText');
+	var winW =  $(window).width();
+
+	$('.lights').click(function(){
+			if(	ropeDemo.data.state == true){
+								ropeDemo.turnOff();
+								central.css({'left':'50%'});
+
+			}else{
+				ropeDemo.waitLight();
+			}
+	});
+
+	
+
+		$("body").mousemove(function(e) {
+			// if(	ropeDemo.data.state == true){
+			// 	var degree = -((e.pageX-(winW/2))*65)/(winW/2);
+
+			// 	titleShadow.css({'transform': 'skew('+(-degree)+'deg,0deg) scaleY(.2)'});
+			// 	titleShadow.css({'left':(winW/2)+(degree*1.2)});
+
+			// 	// central.css({'left':winW/2+(degree*0.2)});
+			// }
+		})
+	</script>
+	<audio preload="auto" controls id="neonSound" class="resources">
+		<source src="neon.mp3" type="audio/mpeg">
+		<source src="neon.ogg" type="audio/ogg">
+
+	Your browser does not support the audio element.
+	</audio>
+	<audio preload="auto" controls id="creakSound" class="resources">
+		<source src="creak0.mp3" type="audio/mpeg">
+		<source src="creak0.ogg" type="audio/ogg">
+
+	Your browser does not support the audio element.
+	</audio>
+	<img class = "resources" id = 'lampOff'src="lamp0.png" width='0' height='0'>
+	<img class = "resources" id = 'lampOn' src="lamp1.png" width='0' height='0'>
+
+</body>
+</html>
